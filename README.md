@@ -7,10 +7,10 @@ git reset --hard 55ce761aa681915ff7d81ad54d95fa9286746e40
 ```
 
 AirSim.Build.cs   (Plugins/AirSim/Source)  
-```Dependency:"APEX"  (APEX Destruction->Chaos Destruction)```   
+```remove Dependency:"APEX"  (APEX Destruction->Chaos Destruction)```   
    
 SimModeBase.cpp   (Plugins/AirSim/Source/SimMode)   
-```UObjectProperty -> FObjectProperty```   
+```replace UObjectProperty -> FObjectProperty```   
    
 AirBluePrintLib.cpp   (Plugins/AirSim/Source)   
 Add Template UCineCameraComponent Type   
