@@ -13,9 +13,10 @@ SimModeBase.cpp   (Plugins/AirSim/Source/SimMode)
 ```UObjectProperty -> FObjectProperty```   
    
 AirBluePrintLib.cpp   (Plugins/AirSim/Source)   
-```#include "CineCameraComponent.h")
+Add Template UCineCameraComponent Type   
+```
+#include "CineCameraComponent.h"
 T* UAirBlueprintLib::GetActorComponent   
-Add Template UCineCameraComponent Type  
 template UCineCameraComponent* UAirBlueprintLib::GetActorComponent(AActor*, FString);
 ```   
 
