@@ -1,3 +1,22 @@
+## AirSim 5.1 Build
+
+## How To
+git clone https://github.com/alonfaraj/AirSim.git
+git reset --hard 55ce761aa681915ff7d81ad54d95fa9286746e40
+
+AirSim.Build.cs   (Plugins/AirSim/Source)  
+```Dependency:"APEX"  (APEX Destruction->Chaos Destruction)```   
+   
+SimModeBase.cpp   (Plugins/AirSim/Source/SimMode)   
+```UObjectProperty -> FObjectProperty```   
+   
+AirBluePrintLib.cpp   (Plugins/AirSim/Source)   
+```#include "CineCameraComponent.h")
+T* UAirBlueprintLib::GetActorComponent   
+Add Template UCineCameraComponent Type  
+template UCineCameraComponent* UAirBlueprintLib::GetActorComponent(AActor*, FString);
+```   
+
 ## AirSim announcement: This repository will be archived in the coming year 
 
 In 2017 Microsoft Research created AirSim as a simulation platform for AI research and experimentation. Over the span of five years, this research project has served its purpose—and gained a lot of ground—as a common way to share research code and test new ideas around aerial AI development and simulation. Additionally, time has yielded advancements in the way we apply technology to the real world, particularly through aerial mobility and autonomous systems. For example, drone delivery is no longer a sci-fi storyline—it’s a business reality, which means there are new needs to be met. We’ve learned a lot in the process, and we want to thank this community for your engagement along the way. 
