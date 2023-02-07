@@ -1,8 +1,10 @@
 ## AirSim 5.1 Build
 
 ## How To
-git clone https://github.com/alonfaraj/AirSim.git
+```
+git clone https://github.com/alonfaraj/AirSim.git   
 git reset --hard 55ce761aa681915ff7d81ad54d95fa9286746e40
+```
 
 AirSim.Build.cs   (Plugins/AirSim/Source)  
 ```Dependency:"APEX"  (APEX Destruction->Chaos Destruction)```   
