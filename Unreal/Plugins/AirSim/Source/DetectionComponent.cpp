@@ -54,6 +54,7 @@ const TArray<FDetectionInfo>& UDetectionComponent::getDetections()
 
                     detection.RelativeTransform = FTransform(getRelativeRotation(actor->GetActorLocation(), actor->GetActorRotation()),
                                                              getRelativeLocation(actor->GetActorLocation()));
+                    detection.Distance = FVector2D::Distance(FVector2D(actor->GetActorLocation()), FVector2D(GetComponentLocation()));
                     cached_detections_.Add(detection);
                 }
             }

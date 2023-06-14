@@ -23,6 +23,9 @@ struct FDetectionInfo
 
     UPROPERTY()
     FTransform RelativeTransform;
+
+    UPROPERTY()
+    float Distance;
 };
 
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))

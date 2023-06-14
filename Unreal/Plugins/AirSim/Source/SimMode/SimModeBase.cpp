@@ -112,7 +112,7 @@ void ASimModeBase::BeginPlay()
     player_loc = player_start_transform.GetLocation();
     // Move the world origin to the player's location (this moves the coordinate system and adds
     // a corresponding offset to all positions to compensate for the shift)
-    this->GetWorld()->SetNewWorldOrigin(FIntVector(player_loc) + this->GetWorld()->OriginLocation);
+    //this->GetWorld()->SetNewWorldOrigin(FIntVector(player_loc) + this->GetWorld()->OriginLocation);
     // Regrab the player's position after the offset has been added (which should be 0,0,0 now)
     player_start_transform = fpv_pawn->GetActorTransform();
     global_ned_transform_.reset(new NedTransform(player_start_transform,
@@ -225,7 +225,7 @@ void ASimModeBase::initializeTimeOfDay()
         sky_sphere_ = sky_spheres[0];
         static const FName sun_prop_name(TEXT("Directional light actor"));
         auto* p = sky_sphere_class_->FindPropertyByName(sun_prop_name);
-
+/*
 #if ENGINE_MINOR_VERSION > 24
         FObjectProperty* sun_prop = CastFieldChecked<FObjectProperty>(p);
 #else
@@ -236,6 +236,7 @@ void ASimModeBase::initializeTimeOfDay()
         sun_ = Cast<ADirectionalLight>(sun_obj);
         if (sun_)
             default_sun_rotation_ = sun_->GetActorRotation();
+            */
     }
 }
 

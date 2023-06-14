@@ -26,6 +26,8 @@
 #include "ARFilter.h"
 #include "AssetRegistryModule.h"
 #include "DetectionComponent.h"
+#include "CineCameraComponent.h"
+
 
 /*
 //TODO: change naming conventions to same as other files?
@@ -317,6 +319,7 @@ template UStaticMeshComponent* UAirBlueprintLib::GetActorComponent(AActor*, FStr
 template URotatingMovementComponent* UAirBlueprintLib::GetActorComponent(AActor*, FString);
 template UCameraComponent* UAirBlueprintLib::GetActorComponent(AActor*, FString);
 template UDetectionComponent* UAirBlueprintLib::GetActorComponent(AActor*, FString);
+template UCineCameraComponent* UAirBlueprintLib::GetActorComponent(AActor*, FString);
 
 bool UAirBlueprintLib::IsInGameThread()
 {

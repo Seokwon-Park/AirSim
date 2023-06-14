@@ -71,3 +71,5 @@ void AAirSimGameMode::StartPlay()
     //game_settings->SetFullscreenMode(EWindowMode::WindowedFullscreen);
     //game_settings->ApplySettings(true);
 }
+
+

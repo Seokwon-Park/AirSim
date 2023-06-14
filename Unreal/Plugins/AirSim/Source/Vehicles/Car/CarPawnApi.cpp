@@ -16,8 +16,9 @@ void CarPawnApi::updateMovement(const msr::airlib::CarApiBase::CarControls& cont
 
     if (!controls.is_manual_gear && movement_->GetTargetGear() < 0)
         movement_->SetTargetGear(0, true); //in auto gear we must have gear >= 0
-    if (controls.is_manual_gear && movement_->GetTargetGear() != controls.manual_gear)
+    if (controls.is_manual_gear && movement_->GetTargetGear() != controls.manual_gear) {
         movement_->SetTargetGear(controls.manual_gear, controls.gear_immediate);
+    }
 
     movement_->SetThrottleInput(controls.throttle);
     movement_->SetSteeringInput(controls.steering);

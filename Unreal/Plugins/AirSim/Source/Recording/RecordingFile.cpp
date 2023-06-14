@@ -20,14 +20,14 @@ void RecordingFile::appendRecord(const std::vector<msr::airlib::ImageCaptureBase
         image_file_name << "img_"
                         << vehicle_sim_api->getVehicleName() << "_"
                         << response.camera_name << "_" << common_utils::Utils::toNumeric(response.image_type) << "_" << common_utils::Utils::getTimeSinceEpochNanos();
-
+        
         std::string extension;
         if (response.pixels_as_float)
             extension = ".pfm";
         else if (response.compress)
             extension = ".png";
         else
-            extension = ".ppm";
+            extension = ".bmp";
 
         image_file_name << extension;
 
@@ -41,13 +41,13 @@ void RecordingFile::appendRecord(const std::vector<msr::airlib::ImageCaptureBase
             if (extension == ".pfm") {
                 common_utils::Utils::writePFMfile(response.image_data_float.data(), response.width, response.height, image_full_file_path);
             }
-            else if (extension == ".ppm") {
-                common_utils::Utils::writePPMfile(response.image_data_uint8.data(), response.width, response.height, image_full_file_path);
+            else if (extension == ".bmp") {
+                common_utils::Utils::writeBMPfile(response.image_data_uint8.data(), response.width, response.height, image_full_file_path);
             }
             else {
                 // Write PNG image, already compressed in binary
                 std::ofstream file(image_full_file_path, std::ios::binary);
-                file.write(reinterpret_cast<const char*>(response.image_data_uint8.data()), response.image_data_uint8.size());
+                file.write(reinterpret_cast<const char*>(response.image_data_uint8.data()), response.image_data_uint8.size());                
                 file.close();
             }
 
